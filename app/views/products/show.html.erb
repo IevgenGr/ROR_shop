@@ -1,0 +1,20 @@
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+  <p id="notice"><%= notice %></p>
+  <p>
+    <strong>Title:</strong>
+    <%= @product.title %>
+  </p>
+  <p>
+    <strong>Image:</strong>
+    <%= image_tag @product.image, alt: "Picture should be here", width: "200px", height: "100%" %>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= @product.body %>
+  </p>
+  <p>
+    <strong>Price:</strong>
+    <%= @product.price %> $
+  </p>
+    <p>
+</main>

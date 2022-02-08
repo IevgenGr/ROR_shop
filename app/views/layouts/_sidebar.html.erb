@@ -1,0 +1,28 @@
+<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+  <div class="position-sticky pt-3">
+<ul class="nav flex-column">
+  <% @categories.each do |category| %>
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" >
+ <!--     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+      <%#= category.title %>-->
+      <%= link_to category.title, category_path(category) %>
+    </a>
+  </li>
+    <% end %>
+  <p> </p>
+  <form>
+  <div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label">Min price</label>
+    <input type="text" name="MIN"  class="form-control" id="formGroupExampleInput" placeholder="Min price">
+  </div>
+  <div class="mb-3">
+    <label for="formGroupExampleInput2" class="form-label">Max price</label>
+    <input type="text" name="MAX"  class="form-control" id="formGroupExampleInput2" placeholder="Max price">
+    <button class="btn btn-outline-success me-lg-3" type="submit">Apply filter</button>
+  </div>
+  </form>
+</ul>
+  </div>
+</nav>
+      

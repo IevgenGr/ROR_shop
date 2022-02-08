@@ -1,0 +1,28 @@
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+  <div class="col-md-9 ms-sm-auto col-lg-3 px-md-2">
+    <%= link_to "Sort by  Price Low to High", :sort => "Low" %>
+    <p></p>
+    <%= link_to "Sort by  Price High to Low", :sort => "High" %>
+  </div>
+
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <div class="row g-3 py-5 row-cols-1 row-cols-lg-3">
+      <% @products.each do |product| %>
+        <div class="feature col">
+          <div class="feature-icon bg-primary bg-gradient">
+            <svg class="bi" width="1em" height="1em">
+              <use xlink:href="#collection"></use>
+            </svg>
+          </div>
+          <h3><%= product.title %></h3>
+          <p><%= image_tag product.image, alt: "Picture should be here", width: "250px", height: "100%" %></p>
+          <p><%= product.price %>  $</p>
+          <td><%= link_to 'Show', product, class: "btn btn-outline-primary me-2" %></td>
+          </a>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+  <%== pagy_bootstrap_nav(@pagy) %>
+</main>
