@@ -5,4 +5,3 @@ class Category < ApplicationRecord
     "#{id}-#{title.parameterize}"
   end
 end
-

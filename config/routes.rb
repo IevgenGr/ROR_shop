@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-
   root 'pages#home', as: 'home'
   get 'search', to: 'pages#search', as: 'search'
-  get 'pages/categories/:id' => "pages#category" , as: 'category'
+  get 'pages/categories/:id' => 'pages#category', as: 'category'
   get '/products', to: 'products#index', as: 'products'
   resources :products
 

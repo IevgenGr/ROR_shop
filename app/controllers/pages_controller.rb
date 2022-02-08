@@ -1,5 +1,4 @@
 class PagesController < ApplicationController
-
   def home
     @categories = Category.all
     @pagy, @products = pagy(Product.all, items: 9)
@@ -16,14 +15,14 @@ class PagesController < ApplicationController
 
   def search
     @categories = Category.all
-    @pagy, @products = pagy(Product.where('title ILIKE?', '%' + params[:qwery] + '%' ), items: 9)
+    @pagy, @products = pagy(Product.where('title ILIKE?', '%' + params[:qwery] + '%'), items: 9)
     @products = sort @products
   end
 
   private
 
-  def sort products
-    if params[:sort] == "High"
+  def sort(products)
+    if params[:sort] == 'High'
       products.order(price: :desc)
     else
       products.order(price: :ASC)
